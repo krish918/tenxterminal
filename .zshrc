@@ -1,3 +1,5 @@
+export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:$HOME/.local/bin/"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -83,8 +85,12 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 
+# Binding keys for word forward and word backword
+# Binding Alt + [ for going backword and Alt + ] for forward - one word at a time
+bindkey '^[[' backward-word
+bindkey '^[]' forward-word
+
 # Shell Integration for fzf
 # Fuzzy Finding Window (fzf) v0.48+ should be installed for this to work
 eval "$(fzf --zsh)"
 
-export PATH="$PATH:/opt/nvim-linux64/bin"
