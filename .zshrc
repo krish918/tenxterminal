@@ -39,6 +39,7 @@ zinit cdreplay -q
 alias ls='ls --color'
 alias ll='ls --color -l'
 alias nv='nvim'
+alias vim='nvim'
 alias cl='clear'
 
 # Setting keybindings for emacs
