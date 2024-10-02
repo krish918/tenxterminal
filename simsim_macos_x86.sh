@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install tmux. Run the script as sudo if required.
-apt install -y tmux
+brew install tmux
 
 # Install tmux plugin manager.
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm/
@@ -13,7 +13,7 @@ if [ ! -f $CONFIG_HOME ]; then
 fi
 
 # Setup tmux config file
-TMUX_CONFIG_FILE="${CONFIG_HOME:g}/tmux/tmux.conf"
+TMUX_CONFIG_FILE="${CONFIG_HOME}/tmux/tmux.conf"
 
 if [ -f $TMUX_CONFIG_FILE ]; then
   mv $TMUX_CONFIG_FILE "${TMUX_CONFIG_FILE}.old"
@@ -21,9 +21,6 @@ fi
 
 # Setup tmux config
 cp tmux.conf $TMUX_CONFIG_FILE
-
-# Install zsh
-apt install -y zsh
 
 # Install fzf tool
 git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
@@ -37,10 +34,9 @@ fi
 cp .zshrc $HOME/.zshrc
 
 # Install neovim
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-sudo rm -rf /opt/nvim
-sudo tar -C /opt -xzf nvim-linux64.tar.gz
-sudo mv /opt/nvim-linux64 /opt/nvim
+curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-x86_64.tar.gz
+sudo tar -C /opt -xzf nvim-macos-x86_64.tar.gz
+sudo mv /opt/nvim-macos-x86_64 /opt/nvim
 
 # Install nvchad plugin
 git clone https://github.com/NvChad/starter $CONFIG_HOME/nvim 

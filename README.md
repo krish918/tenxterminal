@@ -22,10 +22,9 @@ My search for a perfect developement theme came to halt when I found Catppuccin 
 #### Install Nerd Font
 Look for a patched version of your favorite font [here](https://www.nerdfonts.com/font-downloads). This is required because the non-patched version of your favorite font might not contain the glyphs that are required for a *shining and glowing* terminal. If you can't find your font at **Nerd Fonts**, then try some other fonts. If you are picky about your font, try finding a patched font on [Poweline Fonts](https://github.com/powerline/fonts). 
 
-## Installation on Ubuntu 
-> __NOTE__ : Installation steps for other systems is coming soon.
+## Installation 
 
-Login to your remote ubuntu server, where you'd be spending your rest of life. 
+Login to the machine, where you hope to spend your rest of life. 
 
 We will install three primary tools here: 
 
@@ -43,10 +42,20 @@ We will also install some secondary tooling to support enhancements to earlier t
 Tmux once installed and started, will have default shell as `zsh`, but only inside tmux. This means default shell on you machine will be still bash (if it was bash earlier).
 
 Run the following command and sit back and relax: 
+
+### Installation on Ubuntu
+
 ```bash
 git clone https://github.com/krish918/tenxterminal
 cd tenxterminal
 source simsim.sh
+```
+### Installation on MacOS x86
+
+```bash
+git clone https://github.com/krish918/tenxterminal
+cd tenxterminal
+. simsim_macos_x86.sh
 ```
 
 I hope all goes well and you will return to bash once this finishes. 
