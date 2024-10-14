@@ -13,6 +13,8 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
+[ ! -d $HOME/.cache/zinit/completions/ ] && mkdir -p "${HOME}/.cache/zinit/completions"
+
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 zinit light zsh-users/zsh-syntax-highlighting
@@ -24,6 +26,7 @@ zinit light Aloxaf/fzf-tab
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::kubectl
+zinit snippet OMZP::helm
 zinit snippet OMZP::command-not-found
 
 autoload -Uz compinit && compinit
@@ -37,10 +40,13 @@ zinit cdreplay -q
 
 # Setting Aliases
 alias ls='ls --color'
-alias ll='ls --color -l'
 alias nv='nvim'
 alias vim='nvim'
 alias cl='clear'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
 
 # Setting keybindings for emacs
 bindkey -e
