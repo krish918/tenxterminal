@@ -46,7 +46,12 @@ Run the following command and sit back and relax:
 ### Installation on Ubuntu
 
 ```bash
+# clone the repo
+
 git clone https://github.com/krish918/tenxterminal
+
+# Run the script
+
 cd tenxterminal
 source simsim.sh
 ```
